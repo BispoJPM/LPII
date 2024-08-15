@@ -19,8 +19,9 @@ public class Carta{
     public void setNaipe(String naipe){
         this.naipe = naipe;
     }
-    // @Override // (Método para printar as cartas e ver se está correto)
-    // public String toString() { // -> retorna uma string representando o objeto (tirar duvidas com o prof)
-    //     return "Carta: " + nome + " | Naipe: " + naipe;
+    @Override // (Método para printar as cartas e ver se está correto)
+    public String toString() { // -> retorna uma string representando o objeto (tirar duvidas com o prof)
+        return "Carta: " + nome + " | Naipe: " + naipe;
     // 
+}
 }
