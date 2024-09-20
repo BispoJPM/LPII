@@ -1,6 +1,8 @@
 package registro;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Controller {
     public static void main(String[] args) {
@@ -22,17 +24,15 @@ public class Controller {
             System.out.print("Digite o curso: ");
             String curso = scanner.next();
 
-            // Solicita as notas e pesos
-            double[] notas = new double[4];
-            double[] pesos = new double[4];
+            List<Double> notas = new ArrayList<>();
+            List<Double> pesos = new ArrayList<>();
             for (int j = 0; j < 4; j++) {
                 System.out.print("Digite a nota da prova " + (j + 1) + ": ");
-                notas[j] = scanner.nextDouble();
-                
-                System.out.print("Digite o peso da prova " + (j + 1) + ": ");
-                pesos[j] = scanner.nextDouble();
-            }
+                notas.add(scanner.nextDouble());
 
+                System.out.print("Digite o peso da prova " + (j + 1) + ": ");
+                pesos.add(scanner.nextDouble());
+            }
             Aluno aluno = new Aluno(matricula, nome, curso, notas, pesos);
             aluno.setNotas(notas);
             aluno.setPesos(pesos);
@@ -70,7 +70,7 @@ public class Controller {
                         System.out.print("Aluno não encontrado.");
                     }
                     break;
-            
+
                 case 2:
                     System.out.print("Digite o nome para consultar: ");
                     String nomeConsulta = scanner.next();
@@ -88,14 +88,14 @@ public class Controller {
                     System.out.print("Digite o novo curso: ");
                     String novoCurso = scanner.next();
 
-                    double[] novasNotas = new double[4];
-                    double[] novosPesos = new double[4];
+                    List<Double> novasNotas = new ArrayList<>();
+                    List<Double> novosPesos = new ArrayList<>();
                     for (int j = 0; j < 4; j++) {
                         System.out.print("Digite a nova nota da prova " + (j + 1) + ": ");
-                        novasNotas[j] = scanner.nextDouble();
-                        
+                        novasNotas.add(scanner.nextDouble());
+
                         System.out.print("Digite o novo peso da prova " + (j + 1) + ": ");
-                        novosPesos[j] = scanner.nextDouble();
+                        novosPesos.add(scanner.nextDouble());
                     }
 
                     if (turma.alterar(matriculaAlterar, novoCurso, novasNotas, novosPesos)) {

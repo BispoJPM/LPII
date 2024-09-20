@@ -1,4 +1,4 @@
-public class Carta{
+public class Carta {
     private String nome;
     private String naipe;
 
@@ -7,21 +7,25 @@ public class Carta{
         this.nome = nome;
         this.naipe = naipe;
     }
-    public String getNome(){
+
+    public String getNome() {
         return nome;
     }
-    public void setNome(String nome){
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
-    public String getNaipe(){
+
+    public String getNaipe() {
         return naipe;
     }
-    public void setNaipe(String naipe){
+
+    public void setNaipe(String naipe) {
         this.naipe = naipe;
     }
+
     @Override // (Método para printar as cartas e ver se está correto)
-    public String toString() { // -> retorna uma string representando o objeto (tirar duvidas com o prof)
+    public String toString() {
         return "Carta: " + nome + " | Naipe: " + naipe;
-    // 
-}
+    }
 }

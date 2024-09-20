@@ -1,13 +1,14 @@
 package registro;
 
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Aluno {
     private String matricula;
     private String nome;
     private String curso;
-    private double[] notas;
-    private double[] pesos;
+    private List<Double> notas;
+    private List<Double> pesos;
 
     public String getMatricula() {
         return matricula;
@@ -27,31 +28,33 @@ public class Aluno {
     public void setCurso(String curso) {
         this.curso = curso;
     }
-    public double[] getNotas() {
+    public List<Double> getNotas() {
         return notas;
     }
-    public void setNotas(double[] notas) {
+    public void setNotas(List<Double> notas) {
         this.notas = notas;
     }
-    public double[] getPesos() {
+    public List<Double> getPesos() {
         return pesos;
     }
-    public void setPesos(double[] pesos) {
-
+    public void setPesos(List<Double> pesos) {
         this.pesos = pesos;
     }
 
-    public Aluno(String matricula, String nome, String curso, double[] notas, double[] pesos){
+    public Aluno(String matricula, String nome, String curso, List<Double> notas, List<Double> pesos){
         this.matricula = matricula;
         this.nome = nome;
         this.curso = curso;
-        this.notas = new double[4];
-        this.pesos = new double[4];
+        this.notas = notas != null ? new ArrayList<>(notas) : new ArrayList<>();
+        this.pesos = pesos != null ? new ArrayList<>(pesos) : new ArrayList<>();
     }
 
     @Override
     public String toString() {
-        return "Aluno: " + nome + "\n"+"Matricula: " + matricula + "\n"+"Curso: " + curso + "\n"+"Notas: " + Arrays.toString(notas) + "\n"+"Pesos: " + Arrays.toString(pesos);
+        return "Aluno: " + nome + "\n" +
+                "Matricula: " + matricula + "\n" +
+                "Curso: " + curso + "\n" +
+                "Notas: " + notas.toString() + "\n" + "Pesos: " + pesos.toString();
     }
 }
 
